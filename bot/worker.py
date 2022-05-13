@@ -104,7 +104,7 @@ async def encod(event):
         ss = gg
         ss = ss.replace("_", " ")          
         jj = ss
-        jj = jj.replace("1080p", "480p x264")
+        jj = jj.replace("1080p", "480p x265")
         mm = ' '.join(jj.split()[:-1])
         rr = f"encode"
         bb = f"{mm}.mkv"                       
