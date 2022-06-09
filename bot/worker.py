@@ -32,6 +32,7 @@ async def stats(e):
         await e.answer("Someting Went Wrong 🤔\nResend Media", cache_time=0, alert=True)
 
 encode_channel_id = "-1001159872623"
+encod_channel_id = "-1001282810282"
 filz_channel_id = -1001159872623
 status_channel_id = -1001638214016
 filx_channel_id = -1001282810282
@@ -41,7 +42,7 @@ async def encod(event):
         if not event.is_channel:
             return
         event.sender
-        if str(event.sender_id) in encode_channel_id:
+        if str(event.sender_id) in encode_channel_id or encod_channel_id:
             return
         if not event.media:
             return
