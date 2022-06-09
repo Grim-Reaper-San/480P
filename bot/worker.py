@@ -31,9 +31,11 @@ async def stats(e):
         LOGS.info(er)
         await e.answer("Someting Went Wrong 🤔\nResend Media", cache_time=0, alert=True)
 
-encode_channel_id = "-1001282810282"
-filz_channel_id = -1001282810282
+encode_channel_id = "-1001159872623"
+filz_channel_id = -1001159872623
 status_channel_id = -1001638214016
+filx_channel_id = -1001282810282
+
 async def encod(event):
     try:
         if not event.is_channel:
@@ -49,7 +51,8 @@ async def encod(event):
             ):
                 return
         else:
-            return
+            return     
+         
         try:
             oc = event.fwd_from.from_id.user_id
             occ = (await event.client.get_me()).id
@@ -98,14 +101,18 @@ async def encod(event):
         es = dt.now()
         kk = dl.split("/")[-1]        
         hh = kk
-        hh = hh.replace("SubsPlease", "ANIMEXT")
+        hh = hh.replace("[SubsPlease]", "")
         gg = hh
-        gg = gg.replace("SlyFox", "ANIMEXT")
+        gg = gg.replace("SubsPlease", "")
         ss = gg
-        ss = ss.replace("_", " ")          
-        jj = ss
-        jj = jj.replace("1080p", "480p x265")
-        mm = ' '.join(jj.split()[:-1])
+        ss = ss.replace("(480p)", "") 
+        ii = ss
+        ii = ii.replace("480p", "")
+        yy = ii
+        yy = yy.replace("Doukoukai", "Doukoukai S2 - 11")
+        jj = yy
+        jj = jj.replace("_", " ")
+        mm = ' '.join(jj.split()[:-1])        
         rr = f"encode"
         bb = f"{mm}.mkv"                       
         out = f"{rr}/{bb}"
@@ -115,7 +122,7 @@ async def encod(event):
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await e.client.send_message(status_channel_id,
-            mm,
+            jj,
                     buttons=[
                 [Button.inline("Sᴛᴀᴛᴜs 📊", data=f"stats{wah}")],
                 [Button.inline("Cᴀɴᴄᴇʟ 🗑️", data=f"skip{wah}")],
@@ -150,7 +157,10 @@ async def encod(event):
                 ),
             )
         ds = await e.client.send_file(
-             filz_channel_id, file=ok, caption=mm.replace("ANIMEXT", "[ANIMEXT](https://t.me/Latest_Ongoing_Airing_Anime)"), force_document=True, thumb=thum
+             filz_channel_id, file=ok, caption="**" + mm + "**" + "\n" + "`• 480p x265 HEVC`" + "\n" + "`• Eng Sub`", force_document=True, thumb=thum
+        )
+        rs = await e.client.send_file(
+             filx_channel_id, file=ok, caption=mm + " (480p x265 HEVC)" + "[" + " [ANIMEXT](https://t.me/Latest_Ongoing_Airing_Anime)" + "]", force_document=True, thumb=thum
         )
         await nnn.edit(mm + " Encoded Successfully✅",                   
                        buttons=[]
