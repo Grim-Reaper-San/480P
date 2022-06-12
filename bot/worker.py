@@ -110,7 +110,7 @@ async def encod(event):
         ii = ii.replace("480p", "")
         oo = ii
         oo = oo.replace("(540p)", "")
-        yy = ii
+        yy = oo
         yy = yy.replace("Doukoukai", "Doukoukai S2 - 11")
         jj = yy
         jj = jj.replace("_", " ")
