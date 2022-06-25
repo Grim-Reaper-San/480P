@@ -275,9 +275,6 @@ async def encod(event):
                     progress(d, t, nnn, ttt, "uploading..")
                 ),
             )
-        ds = await e.client.send_file(
-             filz_channel_id, file=ok, caption="**" + mm + "**" + "\n" + "`• 480p x265 HEVC`" + "\n" + "`• Eng Sub`", force_document=True, thumb=thum
-        )
         rs = await e.client.send_file(
              filx_channel_id, file=ok, caption=mm + " (480p x265 HEVC)" + "[" + " [ANIMEXT](https://t.me/Latest_Ongoing_Airing_Anime)" + "]", force_document=True, thumb=thum
         )
