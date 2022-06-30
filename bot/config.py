@@ -23,7 +23,7 @@ try:
     OWNER = config("OWNER")
     FFMPEG = config(
         "FFMPEG",
-        default='''ffmpeg -i "{}" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animext':fontsize=16:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -s 854x480 -preset medium -c:v libx265 -crf 25.1 -map 0:v -c:a libopus -b:a 72k -map 0:a -c:s copy -map 0:s? "{}"''',
+        default='''ffmpeg -i "{}" -filter_complex "[0:v]drawtext=fontfile=font.ttf:text='t.me/animext':fontsize=16:fontcolor=ffffff:alpha='if(lt(t,0),0,if(lt(t,5),(t-0)/5,if(lt(t,15),1,if(lt(t,20),(5-(t-15))/5,0))))':x=w-text_w-15:y=15" -pix_fmt yuv420p10le -s 854x480 -preset medium -c:v libx265 -crf 24.9 -map 0:v -c:a libopus -b:a 72k -map 0:a -c:s copy -map 0:s? "{}"''',
     )
     THUMB = config(
         "THUMBNAIL", default="www.google.com"
