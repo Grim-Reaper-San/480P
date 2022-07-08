@@ -45,7 +45,11 @@ async def _(e):
 @bot.on(events.NewMessage(pattern="/help"))
 async def _(e):
     await help(e)
-
+    
+    
+@bot.on(events.NewMessage(pattern="/link"))
+async def _(e):
+    await dl_link(e)    
 
 ######## Callbacks #########
 
@@ -86,12 +90,8 @@ async def _(e):
 @bot.on(events.NewMessage(pattern="/bash"))
 async def _(e):
     await bash(e)
+
     
-@bot.on(events.NewMessage(pattern="/link"))
-async def _(e):
-    await dl_link(e)    
-
-
 ########## AUTO ###########
 
 
