@@ -162,7 +162,7 @@ async def skip(e):
 async def fast_download(e, download_url, filename=None):
     def progress_callback(d, t):
         return (
-            asyncio.get_event_loop().create_task(
+            asyncio.get_event.create_task(
                 progress(
                     d,
                     t,
