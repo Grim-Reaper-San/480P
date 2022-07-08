@@ -162,7 +162,7 @@ async def skip(e):
 async def fast_download(e, download_url, filename=None):
     def progress_callback(d, t):
         return (
-            asyncio.get_event.create_task(
+            asyncio.get_event.loop().create_task(
                 progress(
                     d,
                     t,
@@ -173,7 +173,7 @@ async def fast_download(e, download_url, filename=None):
             ),
         )
 
-    async def _maybe_await(value):
+    async def await(value):
         if inspect.isawaitable(value):
             return await value
         else:
