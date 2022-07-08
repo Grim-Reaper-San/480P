@@ -173,7 +173,7 @@ async def fast_download(e, download_url, filename=None):
             ),
         )
 
-    async def await(value):
+    async def _maybe_await(value):
         if inspect.isawaitable(value):
             return await value
         else:
