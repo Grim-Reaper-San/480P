@@ -146,14 +146,6 @@ async def skip(e):
         await e.delete()
         os.remove(dl)
         os.remove(out)
-        # Lets kill ffmpeg else it will run in memory even after deleting
-        # input.
-        for proc in psutil.process_iter():
-            processName = proc.name()
-            processID = proc.pid
-            print(processName, " - ", processID)
-            if processName == "ffmpeg":
-                os.kill(processID, signal.SIGKILL)
     except BaseException:
         pass
     return
