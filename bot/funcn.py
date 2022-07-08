@@ -74,6 +74,8 @@ def hbs(size):
         raised_to_pow += 1
     return str(round(size, 2)) + " " + dict_power_n[raised_to_pow] + "B"
 
+No_Flood = {}
+
 
 async def progress(current, total, event, start, type_of_ps, file=None):
     now = time.time()
