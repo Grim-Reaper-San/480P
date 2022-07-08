@@ -54,7 +54,6 @@ async def dl_link(event):
         return await event.reply(f"Added {link} in QUEUE")
     WORKING.append(1)
     s = dt.now()
-    dir = f"downloads/"
     xxx = await event.reply("`Downloading...`")
     try:
         dl = await fast_download(xxx, link, name)
@@ -84,7 +83,6 @@ async def dl_link(event):
         out = f"{rr}/{bb}"
         thum = "thumb.jpg"
         dtime = ts(int((es - s).seconds) * 1000)
-        e = xxx
         hehe = f"{out};{dl};0"
         wah = code(hehe)
         nn = await xxx.edit(
