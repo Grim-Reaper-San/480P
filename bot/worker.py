@@ -35,10 +35,6 @@ async def dl_link(event):
         pass
     if not link:
         return
-    if WORKING or QUEUE:
-        QUEUE.update({link: name})
-        return await event.reply(f"Added {link} in QUEUE")
-    WORKING.append(1)
     s = dt.now()
     xxx = await event.reply("`Downloading from url...`")
     try:
