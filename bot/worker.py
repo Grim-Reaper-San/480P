@@ -68,13 +68,13 @@ async def dl_link(event):
         e = xxx
         hehe = f"{out};{dl};0"
         wah = code(hehe)
-        nn = await e.client.send_message(status_channel_id,
-            jj,
-                    buttons=[
-                [Button.inline("Sᴛᴀᴛᴜs 📊", data=f"stats{wah}")],
-                [Button.inline("Cᴀɴᴄᴇʟ 🗑️", data=f"skip{wah}")],
-            ],
-        )
+        nn = await xxx.edit(
+        "`Compressing..`",
+        buttons=[
+            [Button.inline("STATS", data=f"stats{wah}")],
+            [Button.inline("CANCEL PROCESS", data=f"skip{wah}")],
+        ],
+    )
         cmd = FFMPEG.format(dl, out)
         process = await asyncio.create_subprocess_shell(
             cmd, stdout=asyncio.subprocess.PIPE, stderr=asyncio.subprocess.PIPE
