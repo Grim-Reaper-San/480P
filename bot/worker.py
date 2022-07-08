@@ -54,7 +54,8 @@ async def dl_link(event):
         return await event.reply(f"Added {link} in QUEUE")
     WORKING.append(1)
     s = dt.now()
-    xxx = await event.reply("`Downloading from url...`")
+    dir = f"downloads/"
+    xxx = await event.reply("`Downloading...`")
     try:
         dl = await fast_download(xxx, link, name)
     except Exception as er:
